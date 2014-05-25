@@ -1,0 +1,27 @@
+
+body {
+  background-color: #F8F8F8;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 15px;
+}
+
+h1, p {
+  color: #333;
+}
+
+table {
+  border-collapse:collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+td {
+  width: 4em;
+  height: 4em;
+  text-align: center;
+}

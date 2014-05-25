@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>Two forty eight</title>
+    <link rel="stylesheet" href="two_forty_eight.css">
+  </head>
+  <body main-ctrl>
+    <h1>Two forty eight</h1>
+
+    <div>
+      <button ng-click="c.newGame()">New game</button>
+      <button ng-click="c.clear()">Clear</button>
+      <button ng-click="c.addRandom()">Add random</button>
+    </div>
+
+    <div>
+      <button ng-click="c.undo()">Undo</button>
+      -
+      <button ng-click="c.left()">left</button>
+      <button ng-click="c.right()">right</button>
+      <button ng-click="c.up()">up</button>
+      <button ng-click="c.down()">down</button>
+    </div>
+
+    <div>
+      <label>Strategy:
+        <select ng-model="c.strategy">
+          <option ng-repeat="s in c.strategies" ng-value="s">{{s.name}}</option>
+        </select>
+      </label>
+      <br>
+      <label>Run: <input type="checkbox" ng-model="c.run"></label>
+      <br>
+      <label>Delay: <input type="range" min="5" max="1000" ng-model="c.runDelay"></label>
+      <br>
+      Score: {{c.board.score}} <strong>{{c.gameOver ? 'Game Over' : ''}}</strong>
+    </div>
+
+    <table>
+      <tr ng-repeat="row in c.board.rows">
+        <td ng-repeat="cell in row">
+          {{cell.val}}
+        </td>
+      <tr>
+    </table>
+
+    <script src="two_forty_eight.dart.js"></script>
+  </body>
+</html>
